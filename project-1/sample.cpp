@@ -728,7 +728,7 @@ InitGraphics( )
 #ifdef WIN32
 	bool valid = Pattern.Create( (char *)"windows/pattern.vert", (char *)"windows/pattern.frag" );
 #else
-	bool valid = Pattern.Create( (char *)"mac/pattern.vert", (char *)"mac/pattern.frag" );
+	bool valid = Pattern.Create( (char *)"mac-linux/pattern.vert", (char *)"mac-linux/pattern.frag" );
 #endif
 
 	if( !valid )
