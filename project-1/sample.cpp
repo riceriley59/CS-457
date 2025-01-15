@@ -53,11 +53,11 @@
 //		6. The transformations to be reset
 //		7. The program to quit
 //
-//	Author:		Riley Rice
-//
+//	Author:		Riley Rice	
+
 // title of these windows:
 
-const char *WINDOWTITLE = "Project #1 Step and Blended Edged Elliptical Dots -- Riley Rice";
+const char *WINDOWTITLE = "CS357 Project #1 Step and Blended-Edge Elliptical Dots -- Riley Rice";
 const char *GLUITITLE   = "User Interface Window";
 
 // what the glui package defines as true and false:
@@ -724,7 +724,13 @@ InitGraphics( )
 	// all other setups go here, such as GLSLProgram and KeyTime setups:
 
 	Pattern.Init( );
-	bool valid = Pattern.Create( (char *)"pattern.vert", (char *)"pattern.frag" );
+
+#ifdef WIN32
+	bool valid = Pattern.Create( (char *)"windows/pattern.vert", (char *)"windows/pattern.frag" );
+#else
+	bool valid = Pattern.Create( (char *)"mac/pattern.vert", (char *)"mac/pattern.frag" );
+#endif
+
 	if( !valid )
 		fprintf( stderr, "Could not create the Pattern shader!\n" );
 	else
