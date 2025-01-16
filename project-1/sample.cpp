@@ -182,6 +182,8 @@ float	Time;					// used for animation, this has a value between 0. and 1.
 int		Xmouse, Ymouse;			// mouse values
 float	Xrot, Yrot;				// rotation angles in degrees
 
+float uAd, uBd, uTol;
+
 int		SphereList;
 
 
@@ -416,12 +418,9 @@ Display( )
 
 	// set the uniform variables that will change over time:
 
-	NowS0 = 0.5f;
-	NowT0 = 0.5f;
-	NowD  = 0.2f + 0.1f*sinf(2.f*F_PI*Time);
-	Pattern.SetUniformVariable( (char *)"uS0", NowS0 );
-	Pattern.SetUniformVariable( (char *)"uT0", NowT0 );
-	Pattern.SetUniformVariable( (char *)"uD" , NowD  );
+	Pattern.SetUniformVariable( (char *)"uAd" , uAd  );
+	Pattern.SetUniformVariable( (char *)"uBd" , uBd  );
+	Pattern.SetUniformVariable( (char *)"uTol" , uTol  );
 
 	glCallList( SphereList );
 
@@ -728,7 +727,7 @@ InitGraphics( )
 #ifdef WIN32
 	bool valid = Pattern.Create( (char *)"windows/pattern.vert", (char *)"windows/pattern.frag" );
 #else
-	bool valid = Pattern.Create( (char *)"mac-linux/pattern.vert", (char *)"mac-linux/pattern.frag" );
+	bool valid = Pattern.Create( (char *)"mac/pattern.vert", (char *)"mac/pattern.frag" );
 #endif
 
 	if( !valid )
@@ -742,8 +741,6 @@ InitGraphics( )
 	Pattern.SetUniformVariable( (char *)"uKa", 0.1f );
 	Pattern.SetUniformVariable( (char *)"uKd", 0.5f );
 	Pattern.SetUniformVariable( (char *)"uKs", 0.4f );
-	Pattern.SetUniformVariable( (char *)"uColor", 1.f, 0.5f, 0.f, 1.f );
-	Pattern.SetUniformVariable( (char *)"uSpecularColor", 1.f, 1.f, 1.f, 1.f );
 	Pattern.SetUniformVariable( (char *)"uShininess", 12.f );
 	Pattern.UnUse( );
 }
@@ -808,6 +805,39 @@ Keyboard( unsigned char c, int x, int y )
 		case 'p':
 		case 'P':
 			NowProjection = PERSP;
+			break;
+
+		case 'a':
+      if (uAd >= 0.05) {
+        uAd -= 0.01;
+      }
+      break;
+		case 'A':
+      if (uAd <= 0.95) {
+        uAd += 0.01;
+      }
+			break;
+
+		case 'b':
+      if (uBd >= 0.05) {
+        uBd -= 0.01;
+      }
+      break;
+		case 'B':
+      if (uBd <= 0.95) {
+        uBd += 0.01;
+      }
+			break;
+
+		case 't':
+      if (uTol >= 0.05) {
+        uTol -= 0.01;
+      }
+      break;
+		case 'T':
+      if (uTol <= 0.95) {
+        uTol += 0.01;
+      }
 			break;
 
 		case 'q':
@@ -936,6 +966,9 @@ Reset( )
 	NowColor = YELLOW;
 	NowProjection = PERSP;
 	Xrot = Yrot = 0.;
+  uAd = 0.1f;
+  uBd = 0.1f;
+  uTol = 0.05f;
 }
 
 
