@@ -879,19 +879,19 @@ Keyboard( unsigned char c, int x, int y )
             }
             break;
         case 'F':
-            if (uNoiseFreq <= 0.95) {
+            if (uNoiseFreq <= 1.95) {
                 uNoiseFreq += 0.01;
             }
             break;
 
         case 's':
             if (uNoiseAmp >= 0.05) {
-                uNoiseAmp -= 0.01;
+                uNoiseAmp -= 0.05;
             }
             break;
         case 'S':
             if (uNoiseAmp <= 0.95) {
-                uNoiseAmp += 0.01;
+                uNoiseAmp += 0.05;
             }
             break;
 
@@ -1021,8 +1021,8 @@ Reset( )
     NowColor = YELLOW;
     NowProjection = PERSP;
     Xrot = Yrot = 0.;
-    uAd = 0.1f;
-    uBd = 0.1f;
+    uAd = 0.05f;
+    uBd = 0.05f;
     uTol = 0.05f;
     uNoiseFreq = 0.05f;
     uNoiseAmp = 0.05f;

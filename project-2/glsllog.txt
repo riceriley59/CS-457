@@ -1,0 +1,16 @@
+
+ERROR: 0:26: No matching function for call to texture3D(sampler3D, vec2)
+ERROR: 0:27: Use of undeclared identifier 'nv'
+ERROR: 0:27: Use of undeclared identifier 'nv'
+ERROR: 0:27: Use of undeclared identifier 'nv'
+ERROR: 0:27: Use of undeclared identifier 'nv'
+ERROR: 0:28: Use of undeclared identifier 'n'
+ERROR: 0:28: Use of undeclared identifier 'n'
+ERROR: 0:29: Use of undeclared identifier 'n'
+ERROR: 0:46: Use of undeclared identifier 'n'
+ERROR: 0:47: Use of undeclared identifier 'newDist'
+ERROR: 0:49: Use of undeclared identifier 'scale'
+ERROR: 0:49: Use of undeclared identifier 'scale'
+ERROR: 0:51: Use of undeclared identifier 'elipse_result'
+ERROR: 0:52: Use of undeclared identifier 't'
+
