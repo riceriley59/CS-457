@@ -46,7 +46,11 @@ void main() {
     float newDist = oldDist + n;
     float scale = newDist / oldDist;
 
-    float elipse_result = pow((ds * scale) / Ar, 2.) + pow((dt * scale) / Br, 2.);
+    ds *= scale;
+    ds /= Ar;
+    dt *= scale;
+    dt /= Br;
+    float elipse_result = (ds * ds) + (dt * dt);
 
     float t = smoothstep( 1.-uTol, 1.+uTol, elipse_result );
     myColor = mix( ELLIPSECOLOR, OBJECTCOLOR, t );

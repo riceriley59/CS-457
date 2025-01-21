@@ -30,9 +30,6 @@ void main() {
     n = n - 2.;
     n *= uNoiseAmp;
 
-    st.s += n;
-    st.t += n;
-
     // blend OBJECTCOLOR and ELLIPSECOLOR by using the ellipse equation to decide how close
     // 	this fragment is to the ellipse border:
 
@@ -45,7 +42,17 @@ void main() {
     float Sc = (float(numins) * uAd) + Ar;
     float Tc = (float(numint) * uBd) + Br;
 
-    float elipse_result = pow((st.s - Sc) / Ar, 2.) + pow((st.t - Tc) / Br, 2.);
+    float ds = st.s - Sc;
+    float dt = st.t - Tc;
+    float oldDist = sqrt((ds * ds) + (dt * dt));
+    float newDist = oldDist + n;
+    float scale = newDist / oldDist;
+
+    ds *= scale;
+    ds /= Ar;
+    dt *= scale;
+    dt /= Br;
+    float elipse_result = (ds * ds) + (dt * dt);
 
     float t = smoothstep( 1.-uTol, 1.+uTol, elipse_result );
     myColor = mix( ELLIPSECOLOR, OBJECTCOLOR, t );
