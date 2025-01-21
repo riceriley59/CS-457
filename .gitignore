@@ -3,6 +3,9 @@
 Debug/
 sample
 
+# GLSL logs
+.glsllog
+
 # User-specific files
 *.suo
 *.user
