@@ -1,6 +1,3 @@
-// uniforms
-uniform float  uA, uP;
-
 // will be interpolated into the fragment shader:
 varying  vec2  vST;                 // texture coords
 varying  vec3  vN;                  // normal vector
@@ -8,7 +5,11 @@ varying  vec3  vL;                  // vector from point to light
 varying  vec3  vE;                  // vector from point to eye
 varying  vec3  vMC;			            // model coordinates
 
-const vec3 LIGHTPOSITION = vec3( 1., 1., 0. );
+// uniforms
+uniform float  uA, uP;
+uniform float  uLightX, uLightY, uLightZ;
+
+vec3 LIGHTPOSITION = vec3( uLightX, uLightY, uLightZ );
 
 const float Y0 = 1.;
 const float F_PI = 3.14;
