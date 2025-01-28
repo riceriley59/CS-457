@@ -784,6 +784,10 @@ InitGraphics( )
     Pattern.SetUniformVariable( (char *)"uKd", 0.5f );
     Pattern.SetUniformVariable( (char *)"uKs", 0.4f );
     Pattern.SetUniformVariable( (char *)"uShininess", 14.f );
+
+    Pattern.SetUniformVariable( (char *)"uLightX", 1.f );
+    Pattern.SetUniformVariable( (char *)"uLightY", 1.f );
+    Pattern.SetUniformVariable( (char *)"uLightZ", 1.f );
     Pattern.UnUse( );
 }
 

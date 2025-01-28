@@ -1,12 +1,4 @@
 
-ERROR: 0:31: Invalid call of undeclared identifier 'PerturbNormal2'
-ERROR: 0:35: Use of undeclared identifier 'n'
-ERROR: 0:41: Use of undeclared identifier 'Normal'
-ERROR: 0:42: Use of undeclared identifier 'd'
-ERROR: 0:45: Use of undeclared identifier 'd'
-ERROR: 0:47: Use of undeclared identifier 'Normal'
-ERROR: 0:48: Use of undeclared identifier 'ref'
-ERROR: 0:49: Use of undeclared identifier 'cosphi'
-ERROR: 0:50: Use of undeclared identifier 'cosphi'
-ERROR: 0:54: Use of undeclared identifier 'diffuse'
+ERROR: 0:12: Initializer not allowed
+ERROR: 0:34: Use of undeclared identifier 'LIGHTPOSITION'
 
