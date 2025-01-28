@@ -57,7 +57,7 @@
 
 // title of these windows:
 
-const char *WINDOWTITLE = "CS357 Project #3A Displacement Mapping and Lighting -- Riley Rice";
+const char *WINDOWTITLE = "CS357 Project #3B Displacement Mapping, Bump Mapping, and Lighting -- Riley Rice";
 const char *GLUITITLE   = "User Interface Window";
 
 // what the glui package defines as true and false:
@@ -183,6 +183,7 @@ int		Xmouse, Ymouse;			// mouse values
 float	Xrot, Yrot;				// rotation angles in degrees
 
 float uA, uP;
+float uNoiseAmp, uNoiseFreq;
 
 int		SheetList;
 
@@ -273,7 +274,7 @@ MulArray3(float factor, float a, float b, float c )
 
 float NowS0, NowT0, NowD;
 GLSLProgram Pattern;
-
+GLuint  NoiseTexture;
 
 // main program:
 
@@ -412,6 +413,9 @@ Display( )
 
     glEnable( GL_NORMALIZE );
 
+    glActiveTexture(GL_TEXTURE3);
+    glBindTexture(GL_TEXTURE_3D, NoiseTexture);
+
     // draw the box object by calling up its display list:
 
     Pattern.Use( );
@@ -420,6 +424,11 @@ Display( )
 
     Pattern.SetUniformVariable( (char *)"uA" , uP  );
     Pattern.SetUniformVariable( (char *)"uP" , uA  );
+
+    Pattern.SetUniformVariable( (char *)"uNoiseAmp" , uNoiseAmp  );
+    Pattern.SetUniformVariable( (char *)"uNoiseFreq" , uNoiseFreq  );
+
+    Pattern.SetUniformVariable( (char *)"uNoiseTexture" , 3  );
 
     glCallList(SheetList);
 
@@ -627,7 +636,25 @@ InitMenus( )
     glutAttachMenu( GLUT_RIGHT_BUTTON );
 }
 
+unsigned char* ReadTexture3D(char* filename, int* width, int* height, int* depth) {
+    FILE* fp = fopen(filename, "rb");
+    if (fp == NULL) { return NULL; }
 
+    int nums, numt, nump;
+    fread(&nums, 4, 1, fp);
+    fread(&numt, 4, 1, fp);
+    fread(&nump, 4, 1, fp);
+    fprintf(stderr, "Texture size = %d x %d x %d\n", nums, numt, nump);
+
+    *width = nums;
+    *height = numt;
+    *depth = nump;
+
+    unsigned char * texture = new unsigned char[ 4 * nums * numt * nump ];
+    fread(texture, 4 * nums * numt * nump, 1, fp);
+    fclose(fp);
+    return texture;
+}
 
 // initialize the glut and OpenGL libraries:
 //	also setup callback functions
@@ -707,6 +734,22 @@ InitGraphics( )
     glutIdleFunc( Animate );
 
     // init the glew package (a window must be open to do this):
+
+    glGenTextures(1, &NoiseTexture);
+    int nums, numt, nump;
+    unsigned char* texture = ReadTexture3D("noise3d.064.tex", &nums, &numt, &nump);
+    if (texture == NULL) {
+        fprintf(stderr, "Couldn't load noise texture");
+    }
+
+    glBindTexture(GL_TEXTURE_3D, NoiseTexture);
+    glTexParameterf(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameterf(GL_TEXTURE_3D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_R, GL_REPEAT);
+    glTexParameterf(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameterf(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexImage3D(GL_TEXTURE_3D, 0, GL_RGBA, nums, numt, nump, 0, GL_RGBA,
+                 GL_UNSIGNED_BYTE, texture);
 
 #ifdef WIN32
     GLenum err = glewInit( );
@@ -847,6 +890,28 @@ Keyboard( unsigned char c, int x, int y )
             }
             break;
 
+        case 'c':
+            if (uNoiseAmp >= 0.01) {
+                uNoiseAmp -= 0.01;
+            }
+            break;
+        case 'C':
+            if (uNoiseAmp <= 0.99) {
+                uNoiseAmp += 0.01;
+            }
+            break;
+
+        case 'g':
+            if (uNoiseFreq >= 0.01) {
+                uNoiseFreq -= 0.01;
+            }
+            break;
+        case 'G':
+            if (uNoiseFreq <= 0.99) {
+                uNoiseFreq += 0.01;
+            }
+            break;
+
         case 'q':
         case 'Q':
         case ESCAPE:
@@ -975,6 +1040,8 @@ Reset( )
     Xrot = Yrot = 0.;
     uA = 0.5f;
     uP = 0.05f;
+    uNoiseAmp = 0.05f;
+    uNoiseFreq = 0.05f;
 }
 
 
