@@ -1,8 +1,12 @@
 
-ERROR: 0:31: '*' does not operate on 'int' and 'float'
-ERROR: 0:32: '*' does not operate on 'int' and 'float'
-ERROR: 0:34: Use of undeclared identifier 'Sc'
-ERROR: 0:34: Use of undeclared identifier 'Tc'
-ERROR: 0:36: Use of undeclared identifier 'elipse_result'
-ERROR: 0:37: Use of undeclared identifier 't'
+ERROR: 0:28: Use of undeclared identifier 'Tx'
+ERROR: 0:28: Use of undeclared identifier 'Ty'
+ERROR: 0:34: Use of undeclared identifier 'Normal'
+ERROR: 0:35: Use of undeclared identifier 'd'
+ERROR: 0:38: Use of undeclared identifier 'd'
+ERROR: 0:40: Use of undeclared identifier 'Normal'
+ERROR: 0:41: Use of undeclared identifier 'ref'
+ERROR: 0:42: Use of undeclared identifier 'cosphi'
+ERROR: 0:43: Use of undeclared identifier 'cosphi'
+ERROR: 0:47: Use of undeclared identifier 'diffuse'
 
