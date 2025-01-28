@@ -1,0 +1,6 @@
+
+ERROR: 0:25: Incompatible types in initialization (and no available implicit conversion)
+ERROR: 0:26: Incompatible types in initialization (and no available implicit conversion)
+ERROR: 0:31: Use of undeclared identifier 'Tx'
+ERROR: 0:31: Use of undeclared identifier 'Ty'
+
