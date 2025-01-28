@@ -19,7 +19,7 @@ void main() {
 
     // now use myColor in the per-fragment lighting equations:
 
-    vec3 Normal    = normalize(vN);
+    vec3 Normal    = normalize(gl_NormalMatrix * vN);
     vec3 Light     = normalize(vL);
     vec3 Eye       = normalize(vE);
 
