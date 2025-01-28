@@ -1,12 +1,6 @@
 
-ERROR: 0:28: Use of undeclared identifier 'Tx'
-ERROR: 0:28: Use of undeclared identifier 'Ty'
-ERROR: 0:34: Use of undeclared identifier 'Normal'
-ERROR: 0:35: Use of undeclared identifier 'd'
-ERROR: 0:38: Use of undeclared identifier 'd'
-ERROR: 0:40: Use of undeclared identifier 'Normal'
-ERROR: 0:41: Use of undeclared identifier 'ref'
-ERROR: 0:42: Use of undeclared identifier 'cosphi'
-ERROR: 0:43: Use of undeclared identifier 'cosphi'
-ERROR: 0:47: Use of undeclared identifier 'diffuse'
+ERROR: 0:25: Incompatible types in initialization (and no available implicit conversion)
+ERROR: 0:26: Incompatible types in initialization (and no available implicit conversion)
+ERROR: 0:31: Use of undeclared identifier 'Tx'
+ERROR: 0:31: Use of undeclared identifier 'Ty'
 

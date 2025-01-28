@@ -10,9 +10,6 @@ varying  vec3  vL;                   // vector from point to light
 varying  vec3  vE;                   // vector from point to eye
 varying  vec3  vMC;			             // model coordinates
 
-varying  vec3  Tx;
-varying  vec3  Ty;
-
 const vec3 OBJECTCOLOR          = vec3( 1., 1., 0. );           // color to make the object
 const vec3 SPECULARCOLOR        = vec3( 1., 1., 1. );
 
@@ -22,7 +19,7 @@ void main() {
 
     // now use myColor in the per-fragment lighting equations:
 
-    vec3 Normal    = normalize(cross(Tx, Ty));
+    vec3 Normal    = normalize(vN);
     vec3 Light     = normalize(vL);
     vec3 Eye       = normalize(vE);
 
