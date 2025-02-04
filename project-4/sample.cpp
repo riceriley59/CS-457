@@ -878,7 +878,7 @@ Keyboard( unsigned char c, int x, int y )
             break;
 
         case 'm':
-            if (uMix >= 1.01) {
+            if (uMix >= 0.01) {
                 uMix -= 0.01;
             }
             break;
