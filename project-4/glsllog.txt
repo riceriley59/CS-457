@@ -1,4 +1,4 @@
 
-ERROR: 0:12: Initializer not allowed
-ERROR: 0:34: Use of undeclared identifier 'LIGHTPOSITION'
+ERROR: 0:7: No matching function for call to texture3D(sampler2D, vec2)
+ERROR: 0:8: Use of undeclared identifier 'newcolor'
 
