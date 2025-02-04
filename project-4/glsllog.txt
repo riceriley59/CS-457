@@ -1,0 +1,4 @@
+
+ERROR: 0:12: Initializer not allowed
+ERROR: 0:34: Use of undeclared identifier 'LIGHTPOSITION'
+
