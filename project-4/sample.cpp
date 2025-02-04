@@ -841,8 +841,10 @@ InitLists( )
 
     DinoList = glGenLists(1);
     glNewList(DinoList, GL_COMPILE);
-        glScalef(0.25f, 0.25f, 0.25f);
+    glPushMatrix();
+        glScalef(.15f, .15f, .15f);
         LoadObjFile((char *)"dino.obj");
+    glPopMatrix();
     glEndList();
 
 
