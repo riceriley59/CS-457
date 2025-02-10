@@ -421,10 +421,8 @@ Display( )
 
     Pattern.SetUniformVariable( (char *)"uTexUnit" , DogUnit );
 
-    glPushMatrix();
-        //glScalef(4.5f, 4.5f, 4.5f);
-        glCallList(ImageList);
-    glPopMatrix();
+    //glScalef(4.5f, 4.5f, 4.5f);
+    glCallList(ImageList);
 
     Pattern.UnUse( );       // Pattern.Use(0);  also works
 
@@ -722,22 +720,18 @@ InitGraphics( )
 #endif
 
     // all other setups go here, such as GLSLProgram and KeyTime setups:
+    glGenTextures( 1, &DogTexture );
+
     int width, height;
     char *file = (char *)"Dog.bmp";
     unsigned char* texture = BmpToTexture(file, &width, &height);
-    if( texture == NULL )
-        fprintf( stderr, "Cannot open texture '%s'\n", file );
-    else
-        fprintf( stderr, "Opened '%s': width = %d ; height = %d\n", file, width, height );
 
-    glGenTextures( 1, &DogTexture );
     glBindTexture( GL_TEXTURE_2D, DogTexture );
-    glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexImage2D( GL_TEXTURE_2D, 0, 3, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, texture );
+    glTexImage2D( GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, texture );
 
     Pattern.Init( );
 
@@ -769,15 +763,25 @@ InitLists( )
 
     // create the object:
 
-    ImageList = glGenLists( 1 );
-    glNewList( ImageList, GL_COMPILE );
+    const int vertices = 1000;  // Grid size (more = denser mesh)
+    const float step = 1.0f / vertices;  // Step size between vertices
+
+    ImageList = glGenLists(1);
+    glNewList(ImageList, GL_COMPILE);
         glBegin(GL_QUADS);
-            glVertex2f(-0.5f, -0.5f);  // Bottom-left
-            glVertex2f( 0.5f, -0.5f);  // Bottom-right
-            glVertex2f( 0.5f,  0.5f);  // Top-right
-            glVertex2f(-0.5f,  0.5f);  // Top-left
+        for (int i = 0; i < vertices; i++) {
+            for (int j = 0; j < vertices; j++) {
+                float x = -0.5f + i * step;
+                float y = -0.5f + j * step;
+
+                glVertex2f(x, y);
+                glVertex2f(x + step, y);
+                glVertex2f(x + step, y + step);
+                glVertex2f(x, y + step);
+            }
+        }
         glEnd();
-    glEndList( );
+    glEndList();
 
 
     // create the axes:
