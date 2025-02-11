@@ -1,5 +1,0 @@
-
-0(6) : error C7616: global variable gl_MultiTexCoord0 is removed after version 140
-0(7) : error C7616: global variable gl_ModelViewProjectionMatrix is removed after version 140
-0(7) : error C7616: global variable gl_Vertex is removed after version 140
-
