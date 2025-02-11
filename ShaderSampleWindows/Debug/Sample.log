@@ -1,1 +1,3 @@
-﻿  Sample.vcxproj -> Y:\CS557\ShaderSampleWindows\Debug\Sample.exe
+﻿  sample.cpp
+sample.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+  Sample.vcxproj -> C:\Users\bugge\Documents\Scripts\CS-457\ShaderSampleWindows\Debug\Sample.exe

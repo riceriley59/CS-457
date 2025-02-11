@@ -27,14 +27,14 @@
 #endif
 #include "glut.h"
 
-//#define GLM_FORCE_RADIANS
-//#include "glm/vec2.hpp"
-//#include "glm/vec3.hpp"
-//#include "glm/mat3x3.hpp"
-//#include "glm/mat4x4.hpp"
-//#include "glm/gtc/matrix_transform.hpp"
-//#include "glm/gtc/matrix_inverse.hpp"
-//#include "glm/gtc/type_ptr.hpp"
+#define GLM_FORCE_RADIANS
+#include "glm/vec2.hpp"
+#include "glm/vec3.hpp"
+#include "glm/mat3x3.hpp"
+#include "glm/mat4x4.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/matrix_inverse.hpp"
+#include "glm/gtc/type_ptr.hpp"
 
 
 //	This is a sample OpenGL / GLUT program
@@ -421,8 +421,10 @@ Display( )
 
     Pattern.SetUniformVariable( (char *)"uTexUnit" , DogUnit );
 
-    //glScalef(4.5f, 4.5f, 4.5f);
-    glCallList(ImageList);
+    glPushMatrix();
+	    glScalef(4.5f, 4.5f, 4.5f);
+	    glCallList(ImageList);
+    glPopMatrix();
 
     Pattern.UnUse( );       // Pattern.Use(0);  also works
 

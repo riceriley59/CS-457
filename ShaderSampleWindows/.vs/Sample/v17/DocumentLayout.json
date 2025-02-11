@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "Y:\\CS557\\ShaderSampleWindows\\",
+  "WorkspaceRootPath": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A18C8BB-2941-432F-8F8B-BEB51352D229}|Sample.vcxproj|Y:\\CS557\\ShaderSampleWindows\\sample.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{3A18C8BB-2941-432F-8F8B-BEB51352D229}|Sample.vcxproj|C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\sample.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3A18C8BB-2941-432F-8F8B-BEB51352D229}|Sample.vcxproj|solutionrelative:sample.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|Y:\\CS557\\ShaderSampleWindows\\glslprogram.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\glslprogram.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:glslprogram.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|Y:\\CS557\\ShaderSampleWindows\\glslprogram.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\glslprogram.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:glslprogram.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|Y:\\CS557\\ShaderSampleWindows\\pattern.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\pattern.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pattern.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|Y:\\CS557\\ShaderSampleWindows\\pattern.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\pattern.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pattern.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|Y:\\CS557\\ShaderSampleWindows\\pattern.glib||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\pattern.glib||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pattern.glib||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|Y:\\CS557\\ShaderSampleWindows\\keytime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\keytime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:keytime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -38,15 +38,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "pattern.frag",
-              "DocumentMoniker": "Y:\\CS557\\ShaderSampleWindows\\pattern.frag",
+              "DocumentMoniker": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\pattern.frag",
               "RelativeDocumentMoniker": "pattern.frag",
-              "ToolTip": "Y:\\CS557\\ShaderSampleWindows\\pattern.frag",
+              "ToolTip": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\pattern.frag",
               "RelativeToolTip": "pattern.frag",
               "ViewState": "AgIAABgAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -55,23 +55,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "keytime.cpp",
-              "DocumentMoniker": "Y:\\CS557\\ShaderSampleWindows\\keytime.cpp",
-              "RelativeDocumentMoniker": "keytime.cpp",
-              "ToolTip": "Y:\\CS557\\ShaderSampleWindows\\keytime.cpp",
-              "RelativeToolTip": "keytime.cpp",
-              "ViewState": "AgIAAH0AAAAAAAAAAAASwIgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-06T20:21:37.094Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "glslprogram.cpp",
-              "DocumentMoniker": "Y:\\CS557\\ShaderSampleWindows\\glslprogram.cpp",
+              "DocumentMoniker": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\glslprogram.cpp",
               "RelativeDocumentMoniker": "glslprogram.cpp",
-              "ToolTip": "Y:\\CS557\\ShaderSampleWindows\\glslprogram.cpp",
+              "ToolTip": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\glslprogram.cpp",
               "RelativeToolTip": "glslprogram.cpp",
               "ViewState": "AgIAAL8BAAAAAAAAAAAAANMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -81,9 +69,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "glslprogram.h",
-              "DocumentMoniker": "Y:\\CS557\\ShaderSampleWindows\\glslprogram.h",
+              "DocumentMoniker": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\glslprogram.h",
               "RelativeDocumentMoniker": "glslprogram.h",
-              "ToolTip": "Y:\\CS557\\ShaderSampleWindows\\glslprogram.h",
+              "ToolTip": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\glslprogram.h",
               "RelativeToolTip": "glslprogram.h",
               "ViewState": "AgIAAAQAAAAAAAAAAAAnwKUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -93,9 +81,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "pattern.glib",
-              "DocumentMoniker": "Y:\\CS557\\ShaderSampleWindows\\pattern.glib",
+              "DocumentMoniker": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\pattern.glib",
               "RelativeDocumentMoniker": "pattern.glib",
-              "ToolTip": "Y:\\CS557\\ShaderSampleWindows\\pattern.glib",
+              "ToolTip": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\pattern.glib",
               "RelativeToolTip": "pattern.glib",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -105,9 +93,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "pattern.vert",
-              "DocumentMoniker": "Y:\\CS557\\ShaderSampleWindows\\pattern.vert",
+              "DocumentMoniker": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\pattern.vert",
               "RelativeDocumentMoniker": "pattern.vert",
-              "ToolTip": "Y:\\CS557\\ShaderSampleWindows\\pattern.vert",
+              "ToolTip": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\pattern.vert",
               "RelativeToolTip": "pattern.vert",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -117,14 +105,26 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "sample.cpp",
-              "DocumentMoniker": "Y:\\CS557\\ShaderSampleWindows\\sample.cpp",
+              "DocumentMoniker": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\sample.cpp",
               "RelativeDocumentMoniker": "sample.cpp",
-              "ToolTip": "Y:\\CS557\\ShaderSampleWindows\\sample.cpp",
+              "ToolTip": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\sample.cpp",
               "RelativeToolTip": "sample.cpp",
-              "ViewState": "AgIAALsCAAAAAAAAAAAqwH4CAAAMAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-01-10T20:00:53.139Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "keytime.cpp",
+              "DocumentMoniker": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\keytime.cpp",
+              "RelativeDocumentMoniker": "keytime.cpp",
+              "ToolTip": "C:\\Users\\bugge\\Documents\\Scripts\\CS-457\\ShaderSampleWindows\\keytime.cpp",
+              "RelativeToolTip": "keytime.cpp",
+              "ViewState": "AgIAAH0AAAAAAAAAAAASwIgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-06T20:21:37.094Z"
             }
           ]
         }
