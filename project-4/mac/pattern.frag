@@ -65,9 +65,12 @@ void main( ) {
     Normal = normalize( gl_NormalMatrix * Normal );
 
     vec3 reflectVector = reflect(Eye, Normal);
+    reflectVector.t = -reflectVector.t;
+
     vec3 reflectColor = textureCube(uReflectUnit, reflectVector).rgb;
 
     vec3 refractVector = refract(Eye, Normal, uEta);
+    refractVector.t = -refractVector.t;
 
     vec3 refractColor;
     if( all( equal( refractVector, vec3(0.,0.,0.) ) ) )
