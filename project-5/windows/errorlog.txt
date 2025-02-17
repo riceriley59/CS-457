@@ -1,0 +1,12 @@
+
+0(18) : error C0160: invalid character literal
+0(18) : error C1038: declaration of "r" conflicts with previous declaration at 0(17)
+0(18) : error C0000: syntax error, unexpected special error tag, expecting ',' or ';' at token "<error>"
+0(21) : error C0160: invalid character literal
+0(21) : error C1038: declaration of "theta" conflicts with previous declaration at 0(20)
+0(21) : error C0000: syntax error, unexpected special error tag, expecting ',' or ';' at token "<error>"
+0(21) : error C0160: invalid character literal
+0(23) : error C0160: invalid character literal
+0(23) : error C0160: invalid character literal
+0(23) : error C0160: invalid character literal
+
