@@ -4,6 +4,8 @@ uniform float	uShininess;	// specular exponent
 uniform float	uAd, uBd;
 uniform float	uTol;
 
+uniform float   uTime;
+
 uniform sampler3D uNoiseTexture;
 
 uniform float uNoiseFreq, uNoiseAmp;

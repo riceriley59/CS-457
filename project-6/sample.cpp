@@ -53,11 +53,11 @@
 //		6. The transformations to be reset
 //		7. The program to quit
 //
-//	Author:		Riley Rice	
+//	Author:		Riley Rice
 
 // title of these windows:
 
-const char *WINDOWTITLE = "CS357 Project #2 Noisy Elliptical Dots -- Riley Rice";
+const char *WINDOWTITLE = "CS357 Project #6 Snake Menagerie -- Riley Rice";
 const char *GLUITITLE   = "User Interface Window";
 
 // what the glui package defines as true and false:
@@ -149,7 +149,7 @@ char * ColorNames[ ] =
 // the color definitions:
 // this order must match the menu order
 
-const GLfloat Colors[ ][3] = 
+const GLfloat Colors[ ][3] =
     {
         { 1., 0., 0. },		// red
         { 1., 1., 0. },		// yellow
@@ -184,8 +184,9 @@ float	Xrot, Yrot;				// rotation angles in degrees
 
 float uAd, uBd, uTol;
 float uNoiseAmp, uNoiseFreq;
+float uSquirmAmp, uSquirmFreq;
 
-int		SphereList;
+int		SnakeList;
 
 // function prototypes:
 
@@ -267,7 +268,7 @@ MulArray3(float factor, float a, float b, float c )
 //#include "osucone.cpp"
 //#include "osutorus.cpp"
 //#include "bmptotexture.cpp"
-//#include "loadobjfile.cpp"
+#include "loadobjfile.cpp"
 #include "keytime.cpp"
 #include "glslprogram.cpp"
 
@@ -429,9 +430,14 @@ Display( )
     Pattern.SetUniformVariable( (char *)"uNoiseFreq" , uNoiseFreq  );
     Pattern.SetUniformVariable( (char *)"uNoiseAmp" , uNoiseAmp  );
 
+    Pattern.SetUniformVariable( (char *)"uSquirmFreq" , uSquirmFreq  );
+    Pattern.SetUniformVariable( (char *)"uSquirmAmp" , uSquirmAmp  );
+
+    Pattern.SetUniformVariable( (char *)"uTime" ,  Time);
+
     Pattern.SetUniformVariable( (char *)"uNoiseTexture" , 3 );
 
-    glCallList( SphereList );
+    glCallList( SnakeList );
 
     Pattern.UnUse( );       // Pattern.Use(0);  also works
 
@@ -803,9 +809,12 @@ InitLists( )
 
     // create the object:
 
-    SphereList = glGenLists( 1 );
-    glNewList( SphereList, GL_COMPILE );
-    OsuSphere( 1., 64, 64 );
+    SnakeList = glGenLists( 1 );
+    glNewList( SnakeList, GL_COMPILE );
+        glPushMatrix();
+            glScalef(0.2f, 0.2f, 0.2f);
+            LoadObjFile((char*)"snakeH.obj");
+        glPopMatrix();
     glEndList( );
 
 
@@ -870,6 +879,28 @@ Keyboard( unsigned char c, int x, int y )
         case 'T':
             if (uTol <= 0.95) {
                 uTol += 0.01;
+            }
+            break;
+
+        case 'g':
+            if (uSquirmFreq >= 0.05) {
+                uSquirmFreq -= 0.01;
+            }
+            break;
+        case 'G':
+            if (uSquirmFreq <= 2.95) {
+                uSquirmFreq += 0.01;
+            }
+            break;
+
+        case 'l':
+            if (uSquirmAmp >= 0.05) {
+                uSquirmAmp -= 0.05;
+            }
+            break;
+        case 'L':
+            if (uSquirmAmp <= 2.95) {
+                uSquirmAmp += 0.05;
             }
             break;
 
@@ -1026,6 +1057,8 @@ Reset( )
     uTol = 0.05f;
     uNoiseFreq = 0.05f;
     uNoiseAmp = 0.05f;
+    uSquirmFreq = 1.f;
+    uSquirmAmp = 1.f;
 }
 
 
