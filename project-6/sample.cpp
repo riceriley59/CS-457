@@ -182,7 +182,6 @@ float	Time;					// used for animation, this has a value between 0. and 1.
 int		Xmouse, Ymouse;			// mouse values
 float	Xrot, Yrot;				// rotation angles in degrees
 
-float uAd, uBd, uTol;
 float uNoiseAmp, uNoiseFreq;
 float uSquirmAmp, uSquirmFreq;
 
@@ -422,10 +421,6 @@ Display( )
     Pattern.Use( );
 
     // set the uniform variables that will change over time:
-
-    Pattern.SetUniformVariable( (char *)"uAd" , uAd  );
-    Pattern.SetUniformVariable( (char *)"uBd" , uBd  );
-    Pattern.SetUniformVariable( (char *)"uTol" , uTol  );
 
     Pattern.SetUniformVariable( (char *)"uNoiseFreq" , uNoiseFreq  );
     Pattern.SetUniformVariable( (char *)"uNoiseAmp" , uNoiseAmp  );
@@ -849,39 +844,6 @@ Keyboard( unsigned char c, int x, int y )
             NowProjection = PERSP;
             break;
 
-        case 'a':
-            if (uAd >= 0.05) {
-                uAd -= 0.01;
-            }
-            break;
-        case 'A':
-            if (uAd <= 0.95) {
-                uAd += 0.01;
-            }
-            break;
-
-        case 'b':
-            if (uBd >= 0.05) {
-                uBd -= 0.01;
-            }
-            break;
-        case 'B':
-            if (uBd <= 0.95) {
-                uBd += 0.01;
-            }
-            break;
-
-        case 't':
-            if (uTol >= 0.05) {
-                uTol -= 0.01;
-            }
-            break;
-        case 'T':
-            if (uTol <= 0.95) {
-                uTol += 0.01;
-            }
-            break;
-
         case 'g':
             if (uSquirmFreq >= 0.05) {
                 uSquirmFreq -= 0.01;
@@ -1052,9 +1014,6 @@ Reset( )
     NowColor = YELLOW;
     NowProjection = PERSP;
     Xrot = Yrot = 0.;
-    uAd = 0.05f;
-    uBd = 0.05f;
-    uTol = 0.05f;
     uNoiseFreq = 0.05f;
     uNoiseAmp = 0.05f;
     uSquirmFreq = 1.f;

@@ -7,6 +7,9 @@ varying vec3 vMC;  // Model coordinates
 uniform float uTime;
 uniform float uSquirmFreq, uSquirmAmp;
 
+uniform sampler3D uNoiseTexture;
+uniform float uNoiseFreq, uNoiseAmp;
+
 const vec3 LIGHTPOSITION = vec3(5., 5., 0.);
 
 const float PI = 3.14159265;
@@ -18,9 +21,13 @@ void main()
     vST = gl_MultiTexCoord0.st;
     vMC = gl_Vertex.xyz;
 
+    vec4 nv = texture3D(uNoiseTexture, uNoiseFreq * vec3(vST, 0.));
+    float n = nv.r + nv.g + nv.b + nv.a;
+    n *= uNoiseAmp;
+
     // Apply the wave movement to Z
     vec3 vert = gl_Vertex.xyz;
-    vert.z += uSquirmAmp * sin(TWOPI * uSquirmFreq * uTime + (TWOPI * vert.x) / LENGTH);
+    vert.z += n + uSquirmAmp * sin(TWOPI * uSquirmFreq * uTime + (TWOPI * vert.x) / LENGTH);
 
     vec4 ECposition = gl_ModelViewMatrix * vec4(vert, 1.0);
     vN = normalize(gl_NormalMatrix * gl_Normal);

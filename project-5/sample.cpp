@@ -182,8 +182,8 @@ float	Time;					// used for animation, this has a value between 0. and 1.
 int		Xmouse, Ymouse;			// mouse values
 float	Xrot, Yrot;				// rotation angles in degrees
 
-int		ImageList;
-GLuint     DogTexture;
+GLuint		ImageList;
+GLuint      DogTexture;
 
 
 // function prototypes:
@@ -412,17 +412,17 @@ Display( )
 
     // set the uniform variables that will change over time:
 
-    Pattern.SetUniformVariable( (char *)"uSc" , 0  );
-    Pattern.SetUniformVariable( (char *)"uTc" , 0  );
-    Pattern.SetUniformVariable( (char *)"uRad" , 0  );
-    Pattern.SetUniformVariable( (char *)"uMag" , 0  );
-    Pattern.SetUniformVariable( (char *)"uWhirl" , 0  );
-    Pattern.SetUniformVariable( (char *)"uMosaic" , 0  );
+    Pattern.SetUniformVariable( (char *)"uSc" , .5  );
+    Pattern.SetUniformVariable( (char *)"uTc" , .5  );
+    Pattern.SetUniformVariable( (char *)"uRad" , .2  );
+    Pattern.SetUniformVariable( (char *)"uMag" , 1.5  );
+    Pattern.SetUniformVariable( (char *)"uWhirl" , 1.  );
+    Pattern.SetUniformVariable( (char *)"uMosaic" , 0.01  );
 
     Pattern.SetUniformVariable( (char *)"uTexUnit" , DogUnit );
 
     glPushMatrix();
-	    glScalef(4.5f, 4.5f, 4.5f);
+	    //glScalef(4.5f, 4.5f, 4.5f);
 	    glCallList(ImageList);
     glPopMatrix();
 
