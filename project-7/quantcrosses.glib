@@ -17,5 +17,8 @@ Program QuantCrosses						\
 	uKd <0. 0.6 1.0>						\
 	uKs <0. 0.5 1.0>						\
 	uShininess <2. 10. 50.>					\
+	uUseChromaDepth < false >				\
+	uBlueDepth <0. 4.4 10.>					\
+	uRedDepth <0. 1. 5.>					\
 	
 Obj cow.obj

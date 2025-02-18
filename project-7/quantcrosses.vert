@@ -2,9 +2,7 @@
 
 out  vec3  vN;	  // normal vector
 
-void
-main( )
-{
+void main( ) {
 	vN = gl_Normal;
 	gl_Position = gl_Vertex;
 }

@@ -1,3 +1,4 @@
 
-0(38) : error C7011: implicit cast from "float" to "vec3"
+0(62) : error C1503: undefined variable "gZ"
+0(65) : error C1503: undefined variable "gZ"
 

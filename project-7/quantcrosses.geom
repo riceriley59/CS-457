@@ -26,6 +26,7 @@ float Quantize(float f) {
 	f *= uQuantize;
 	int fi = int(f);
 	f = float(fi) / uQuantize;
+
 	return f;
 }
 
@@ -42,7 +43,7 @@ void ProduceCrosses(float s, float t) {
 
 	vec4 ECposition = gl_ModelViewProjectionMatrix * vec4(v, 1.);
 	gL = normalize(LIGHTPOSITION - ECposition.xyz);
-	gE = normalize(-ECposition.xyz);
+	gE = -ECposition.xyz;
 
 	gl_Position = gl_ModelViewProjectionMatrix * vec4(v - vec3(uSize, 0, 0), 1.);
 	EmitVertex();
@@ -80,7 +81,7 @@ void main() {
 	
 	int numLayers = 1 << uLevel;
 
-	float dt = 1. / float( numLayers );
+	float dt = 1. / float(numLayers);
 	float t = 1.;
 
 	for(int it = 0; it <= numLayers; it++) {
