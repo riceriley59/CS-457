@@ -9,9 +9,7 @@ const float 	PI 		= 3.14159265;
 const float	TWOPI 	= 2.*PI;
 const float	LENGTH 	= 5.;
 
-void
-main( )
-{
+void main() {
     vST = gl_MultiTexCoord0.st;
     vec3 vert = gl_Vertex.xyz;
 

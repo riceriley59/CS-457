@@ -15,8 +15,7 @@ const vec3 SPECULARCOLOR = vec3(1.0, 1.0, 1.0);
 // Elevation thresholds
 const float TRUNK_END = 0.4;  // height where rock starts
 
-void main()
-{
+void main() {
     // Determine elevation-based color
     vec3 myColor;
 
@@ -40,12 +39,10 @@ void main()
 
     // Specular lighting
     float s = 0.0;
-    if (d > 0.0)
-    {
+    if (d > 0.0) {
         vec3 ref = normalize(reflect(-Light, Normal));
         float cosphi = dot(Eye, ref);
-        if (cosphi > 0.0)
-        {
+        if (cosphi > 0.0) {
             s = pow(max(cosphi, 0.0), uShininess);
         }
     }

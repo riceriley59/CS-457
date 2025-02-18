@@ -13,17 +13,15 @@ const float	TWOPI = 2.0 * PI;
 // Water Parameters
 const float WATER_LEVEL = 0.1;
 const float WAVE_AMPLITUDE = 0.05;
-const float WAVE_FREQUENCY = 2.0;
+const float WAVE_FREQUENCY = 0.1;
 
-void main()
-{
+void main() {
     vST = gl_MultiTexCoord0.st;
     vec3 vert = gl_Vertex.xyz;
 
     // Add wave effect to water surface
-    if (vert.y <= WATER_LEVEL)
-    {
-        float wave = WAVE_AMPLITUDE * sin(WAVE_FREQUENCY * (vert.x + vert.z) + uTime);
+    if (vert.y <= WATER_LEVEL) {
+        float wave = WAVE_AMPLITUDE * sin(WAVE_FREQUENCY * (vert.x + vert.z) * uTime);
         vert.y += wave;
     }
 
