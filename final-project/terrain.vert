@@ -4,6 +4,7 @@ varying  vec2  	vST;
 varying  vec3  	vN;
 varying  vec3  	vL;
 varying  vec3  	vE;
+varying  vec3   vMC;
 varying  float   elevation;
 
 const vec3 	LIGHTPOS = vec3(  10., 10., 5. );
@@ -29,6 +30,7 @@ void main() {
 
     elevation = vert.y;
 
+    vMC = vert.xyz;
     vN = normalize( gl_NormalMatrix * gl_Normal );
     vL = LIGHTPOS - ECposition.xyz;
     vE = vec3( 0., 0., 0. ) - ECposition.xyz;

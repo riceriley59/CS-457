@@ -1,0 +1,18 @@
+
+ERROR: 0:79: Use of undeclared identifier 'vMC'
+ERROR: 0:80: Use of undeclared identifier 'nvx'
+ERROR: 0:80: Use of undeclared identifier 'nvx'
+ERROR: 0:80: Use of undeclared identifier 'nvx'
+ERROR: 0:80: Use of undeclared identifier 'nvx'
+ERROR: 0:81: Use of undeclared identifier 'angx'
+ERROR: 0:83: Use of undeclared identifier 'vMC'
+ERROR: 0:83: Use of undeclared identifier 'vMC'
+ERROR: 0:84: Use of undeclared identifier 'nvy'
+ERROR: 0:84: Use of undeclared identifier 'nvy'
+ERROR: 0:84: Use of undeclared identifier 'nvy'
+ERROR: 0:84: Use of undeclared identifier 'nvy'
+ERROR: 0:85: Use of undeclared identifier 'angy'
+ERROR: 0:87: Use of undeclared identifier 'angx'
+ERROR: 0:87: Use of undeclared identifier 'angy'
+ERROR: 0:89: Use of undeclared identifier 'n'
+

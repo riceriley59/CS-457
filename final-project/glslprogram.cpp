@@ -810,7 +810,8 @@ GLSLProgram::SetUniformVariable( char* name, int val )
 #endif
 
 			default:
-				fprintf( stderr, "Setting uniform variable '%s': please be more explicit with the variable type\n", name );
+				//fprintf( stderr, "Setting uniform variable '%s': please be more explicit with the variable type\n", name );
+                break;
 		}
 #else
 		glUniform1i( loc, val );

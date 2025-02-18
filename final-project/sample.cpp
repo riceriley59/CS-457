@@ -200,6 +200,8 @@ float	Time;					// used for animation, this has a value between 0. and 1.
 int		Xmouse, Ymouse;			// mouse values
 float	Xrot, Yrot;				// rotation angles in degrees
 
+GLuint  NoiseTexture;
+
 std::vector<std::vector<double> > TerrainNoisemap, TreeNoisemap;
 
 // function prototypes:
@@ -452,12 +454,16 @@ Display( )
 
     // since we are using glScalef( ), be sure the normals get unitized:
 
-    glEnable( GL_NORMALIZE );
+    glEnable(GL_NORMALIZE);
 
+    glActiveTexture(GL_TEXTURE3);
+    glBindTexture(GL_TEXTURE_3D, NoiseTexture);
 
     // draw the terrain by calling up its display list:
     Terrain.Use();
     Terrain.SetUniformVariable((char *)"uTime", Time);
+    Terrain.SetUniformVariable((char *)"uNoiseTexture", (int)3);
+
     glBegin(GL_TRIANGLES);
 
     glColor3f(0.f, 1.f, 0.f);
@@ -494,7 +500,7 @@ Display( )
             double treeValue = TreeNoisemap[z][x];        // Get tree noise value
 
             // Only place a tree if the terrain height is below the threshold
-            if(terrainHeight > 0.1 && terrainHeight < 0.5 && treeValue > 0.1) {
+            if(terrainHeight > 0.1 && terrainHeight < 0.5 && treeValue > 0.01) {
                 glPushMatrix();
                 glTranslatef(x, terrainHeight, z); // Position tree
                 glScalef(0.03f, 0.03f, 0.03f);
@@ -757,7 +763,25 @@ InitMenus( )
     glutAttachMenu( GLUT_RIGHT_BUTTON );
 }
 
+unsigned char* ReadTexture3D(char* filename, int* width, int* height, int* depth) {
+    FILE* fp = fopen(filename, "rb");
+    if (fp == NULL) { return NULL; }
 
+    int nums, numt, nump;
+    fread(&nums, 4, 1, fp);
+    fread(&numt, 4, 1, fp);
+    fread(&nump, 4, 1, fp);
+    fprintf(stderr, "Texture size = %d x %d x %d\n", nums, numt, nump);
+
+    *width = nums;
+    *height = numt;
+    *depth = nump;
+
+    unsigned char * texture = new unsigned char[ 4 * nums * numt * nump ];
+    fread(texture, 4 * nums * numt * nump, 1, fp);
+    fclose(fp);
+    return texture;
+}
 
 // initialize the glut and OpenGL libraries:
 //	also setup callback functions
@@ -837,6 +861,23 @@ InitGraphics( )
     glutIdleFunc( Animate );
 
     // init the glew package (a window must be open to do this):
+
+    glGenTextures(1, &NoiseTexture);
+    int nums, numt, nump;
+    unsigned char* texture = ReadTexture3D("noise3d.064.tex", &nums, &numt, &nump);
+    if (texture == NULL) {
+        fprintf(stderr, "Couldn't load noise texture");
+    }
+
+    glBindTexture(GL_TEXTURE_3D, NoiseTexture);
+    glTexParameterf(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameterf(GL_TEXTURE_3D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_R, GL_REPEAT);
+    glTexParameterf(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameterf(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexImage3D(GL_TEXTURE_3D, 0, GL_RGBA, nums, numt, nump, 0, GL_RGBA,
+                 GL_UNSIGNED_BYTE, texture);
+
 
 #ifdef WIN32
     GLenum err = glewInit( );
