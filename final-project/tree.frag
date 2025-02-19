@@ -10,7 +10,7 @@ varying  vec3  vE;
 const vec3 GRASS_COLOR = vec3(0., 1., 0.);
 const vec3 TRUNK_COLOR  = vec3(0.55, 0.27, 0.07);
 
-const vec3 SPECULARCOLOR = vec3(1.0, 1.0, 1.0);
+const vec3 SPECULAR = vec3(1.0, 1.0, 1.0);
 
 // Elevation thresholds
 const float TRUNK_END = 0.4;  // height where rock starts
@@ -46,7 +46,7 @@ void main() {
             s = pow(max(cosphi, 0.0), uShininess);
         }
     }
-    vec3 specular = uKs * s * SPECULARCOLOR;
+    vec3 specular = uKs * s * SPECULAR;
 
     // Final color
     gl_FragColor = vec4(ambient + diffuse + specular, 1.0);

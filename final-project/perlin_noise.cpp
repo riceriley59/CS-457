@@ -93,6 +93,7 @@ double Noise2D(double x, double y, const std::vector<int> Permutation) {
                 Lerp(v, dotBottomRight, dotTopRight));
 }
 
+// Add FBM to Noise Map
 double FractalBrownianMotion(double x, double y, double amplitude, double frequency, int numOctaves, std::vector<int> Permutation) {
     double result = 0.0;
 
@@ -107,6 +108,7 @@ double FractalBrownianMotion(double x, double y, double amplitude, double freque
     return result;
 }
 
+// Function to Generate FBM Noise Map and return it in a 2D Array
 std::vector<std::vector<double> > GenerateFBMNoiseMap(int width, int height, double amplitude, double frequency, int numOctaves, double scale) {
     const std::vector<int> Permutation = MakePermutation();
 

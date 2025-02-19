@@ -13,8 +13,6 @@
 #define F_PI_2		((float)(F_PI/2.f))
 #endif
 
-
-
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
@@ -25,8 +23,6 @@
 #endif
 
 #include "glut.h"
-
-
 
 //	This is a sample OpenGL / GLUT program
 //
@@ -985,11 +981,11 @@ Keyboard( unsigned char c, int x, int y )
             break;
 
         case '+':
-  			Scale += SCLFACT * SCROLL_WHEEL_CLICK_FACTOR;
+            Scale += SCLFACT * SCROLL_WHEEL_CLICK_FACTOR;
             break;
 
         case '-':
-  			Scale -= SCLFACT * SCROLL_WHEEL_CLICK_FACTOR;
+            Scale -= SCLFACT * SCROLL_WHEEL_CLICK_FACTOR;
             break;
 
         default:

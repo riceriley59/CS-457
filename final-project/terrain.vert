@@ -1,15 +1,17 @@
 uniform float uTime;
 
 varying  vec2  	vST;
+
 varying  vec3  	vN;
 varying  vec3  	vL;
 varying  vec3  	vE;
 varying  vec3   vMC;
+
 varying  float   elevation;
 
 const vec3 	LIGHTPOS = vec3(  10., 10., 5. );
-const float 	PI = 3.14159265;
-const float	TWOPI = 2.0 * PI;
+const float PI = 3.14159265;
+const float TWOPI = 2.0 * PI;
 
 // Water Parameters
 const float WATER_LEVEL = 0.1;
